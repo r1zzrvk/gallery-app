@@ -1,11 +1,16 @@
-import { Button } from "react-bootstrap";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AboutPage from "./components/AboutPage";
+import GalleryPage from "./components/GalleryPage";
 
 
 function App() {
   return (
-    <div>
-     <Button variant="primary" >push</Button>
-    </div>
+    <BrowserRouter>
+     <Routes>
+       <Route exact path="/" element={<GalleryPage/>}/>
+       <Route exact path="/about" element={<AboutPage />}/>
+     </Routes>
+    </BrowserRouter>
   );
 }
 
