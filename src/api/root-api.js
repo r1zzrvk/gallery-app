@@ -1,7 +1,7 @@
 import axios from "axios"
 
 export const rootAPI = {
-  fetchItems: (limit) => {
+  fetchItems: (limit = 24) => {
     return axios
     .get(`https://jsonplaceholder.typicode.com/photos?_limit=${limit}`)
     .then(response => response.data)

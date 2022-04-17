@@ -1,4 +1,5 @@
 import {
+  ASYNC_FETCH_ITEMS,
   FETCH_ITEMS,
   FETCH_ITEMS_FAILED,
   FETCH_ITEMS_SUCCESS
@@ -18,6 +19,12 @@ export const fetchItemsFailedAction = (payload) => ({
   type: FETCH_ITEMS_FAILED,
   payload
 });
+
+export const asyncFetchItemsAction = (payload) => ({
+  type: ASYNC_FETCH_ITEMS,
+  payload
+})
+
 
 
 
