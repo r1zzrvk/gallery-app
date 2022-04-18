@@ -6,6 +6,11 @@ const initialState = {
   error: '',
   item: {},
   limit: 24,
+  user: {
+    avatar:'https://inlnk.ru/VoVjQ0',
+    firstName: 'Станислав',
+    email: 'example@gmail.com',
+  }
 }
 
 export const rootReducer = (state = initialState, { type, payload }) => {

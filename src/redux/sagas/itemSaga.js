@@ -1,6 +1,6 @@
 import { call, put, takeEvery, } from 'redux-saga/effects'
 import { rootAPI } from '../../api/root-api';
-import { fetchItemsAction, fetchItemsSuccessAction, fetchItemsFailedAction, asyncFetchItemsAction} from '../actions';
+import { fetchItemsAction, fetchItemsSuccessAction, fetchItemsFailedAction} from '../actions';
 import { ASYNC_FETCH_ITEMS } from '../constants';
 
 const delay = (ms) => new Promise(res => setTimeout(res, ms))

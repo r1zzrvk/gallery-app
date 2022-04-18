@@ -1,24 +1,23 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { asyncFetchItemsAction, fetchItemsAction } from '../redux/actions';
+import { asyncFetchItemsAction } from '../redux/actions';
+import ListItem from './ListItem';
+import Loader from './Loader';
 
 const GalleryPage = () => {
   const dispatch = useDispatch();
-  const {items, isLoading} = useSelector(state => state.root);
+  const { items, isLoading } = useSelector(state => state.root);
 
-  useEffect(() => {  
-    // dispatch(fetchItemsAction());
+  useEffect(() => {
     dispatch(asyncFetchItemsAction())
-  },[])
+  }, [dispatch])
 
-if(isLoading) {
-  return <h1>Загрузка...</h1>
-}
+  if (isLoading) {
+    return <Loader />
+  }
   return (
     <div>
-      {items.map(item => <div key={item.id}>
-        {item.id}
-      </div>)}
+      {items.map(item => <ListItem item={item} key={item.id}/>)}
     </div>
   )
 }
