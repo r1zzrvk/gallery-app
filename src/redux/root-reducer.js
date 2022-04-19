@@ -1,4 +1,4 @@
-import { FETCH_ITEMS, FETCH_ITEMS_FAILED, FETCH_ITEMS_SUCCESS } from "./constants"
+import { FETCH_ITEMS, FETCH_ITEMS_FAILED, FETCH_ITEMS_SUCCESS, FETCH_ITEM_FAILED, FETCH_ITEM_SUCCESS } from "./constants"
 
 const initialState = {
   items: [],
@@ -29,6 +29,19 @@ export const rootReducer = (state = initialState, { type, payload }) => {
       items: payload
     };
   case FETCH_ITEMS_FAILED:
+    return {
+      ...state,
+      isLoading: false,
+      error: payload
+    };
+  case FETCH_ITEM_SUCCESS:
+    return {
+      ...state,
+      isLoading: false,
+      error:'',
+      item: payload
+    };
+  case FETCH_ITEM_FAILED:
     return {
       ...state,
       isLoading: false,

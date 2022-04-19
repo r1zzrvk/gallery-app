@@ -6,7 +6,7 @@ import Loader from './Loader';
 
 const GalleryPage = () => {
   const dispatch = useDispatch();
-  const { items, isLoading } = useSelector(state => state.root);
+  const { items, isLoading} = useSelector(state => state.root);
 
   useEffect(() => {
     dispatch(asyncFetchItemsAction())

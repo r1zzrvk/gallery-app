@@ -5,5 +5,11 @@ export const rootAPI = {
     return axios
     .get(`https://jsonplaceholder.typicode.com/photos?_limit=${limit}`)
     .then(response => response.data)
+  },
+
+  fetchItem: (id) => {
+    return axios
+    .get(`https://jsonplaceholder.typicode.com/photos/${id}`)
+    .then(response => response.data)
   }
 };
